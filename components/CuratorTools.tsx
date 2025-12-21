@@ -1,5 +1,6 @@
+
 import React, { useState, useEffect } from 'react';
-import { JOINT_PRESETS } from '../constants';
+import { JOINT_PRESETS } from '../constants.ts';
 
 interface CuratorToolsProps {
   isOpen: boolean;
@@ -52,7 +53,7 @@ const CuratorTools: React.FC<CuratorToolsProps> = ({ isOpen, onClose }) => {
     boardThickness: ${p.boardThickness},
     pinWidth: ${p.pinWidth},
     numTails: ${p.numTails},
-    angle: JointAngle.${p.angle === 5 ? 'ONE_TO_FIVE' : p.angle === 6 ? 'ONE_TO_SIX' : 'ONE_TO_EIGHT'},
+    angle: ${p.angle},
     woodType: WoodType.${p.woodType},
     difficulty: '${p.difficulty}',
     recommendedWood: '${p.recommendedWood}',

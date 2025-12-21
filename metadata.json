@@ -1,5 +1,17 @@
 {
   "name": "Dovetail Master Pro",
-  "description": "A high-velocity precision woodworking tool for designing and calculating perfect dovetail joints. Features Gemini 3 Flash powered layout optimization and real-time SVG schematics.",
-  "requestFramePermissions": []
+  "description": "Professional-grade Joinery CAD for Master Architects. Enforces ANSI/ISO drafting standards and structural wood-fiber physics.",
+  "requestFramePermissions": [],
+  "engineering_specs": {
+    "ratios": {
+      "softwood": "1:6 (9.5°)",
+      "hardwood": "1:8 (7.1°)",
+      "synthetic": "14° (Router Std)"
+    },
+    "constraints": {
+      "half_pin_min": "0.5 * thickness",
+      "cnc_min_gap": "3.175mm",
+      "grain_alignment": "Perpendicular"
+    }
+  }
 }

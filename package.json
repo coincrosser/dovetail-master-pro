@@ -1,22 +1,32 @@
 {
   "name": "dovetail-master-pro",
-  "private": true,
-  "version": "0.0.0",
+  "version": "3.1.0",
+  "description": "High-velocity precision woodworking joint calculator and 3D visualizer powered by Gemini API.",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "npx serve .",
+    "start": "npx serve .",
+    "lint": "eslint . --ext ts,tsx"
   },
+  "keywords": [
+    "woodworking",
+    "dovetail",
+    "joinery",
+    "threejs",
+    "react",
+    "gemini-api",
+    "cad"
+  ],
+  "author": "Hookyard Engineering",
+  "license": "MIT",
   "dependencies": {
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
-    "@google/genai": "1.34.0"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "three": "^0.160.0",
+    "@google/genai": "^1.34.0"
   },
   "devDependencies": {
-    "@types/node": "^22.14.0",
-    "@vitejs/plugin-react": "^5.0.0",
-    "typescript": "~5.8.2",
-    "vite": "^6.2.0"
+    "serve": "^14.2.3",
+    "typescript": "^5.3.3"
   }
 }

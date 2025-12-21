@@ -2,46 +2,103 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dovetail Master Pro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Dovetail PRO v11.0 | PDF Engine</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Roboto+Mono:wght@400;700&display=swap');
         
+        :root {
+            --bg-paper: #F5F5F7;
+            --ink-black: #000000;
+            --blueprint-blue: #0047AB;
+            --safety-orange: #FF6B00;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0f172a;
-            color: #f8fafc;
+            background-color: var(--bg-paper);
+            color: var(--ink-black);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
         }
 
-        .font-mono {
-            font-family: 'JetBrains Mono', monospace;
+        .font-mono { font-family: 'Roboto Mono', monospace; }
+        
+        .thick-border {
+            border: 2px solid var(--ink-black);
         }
 
-        ::-webkit-scrollbar {
-            width: 8px;
+        .input-field {
+            background: white;
+            border: 2px solid var(--ink-black);
+            padding: 12px;
+            font-weight: 700;
+            outline: none;
+            transition: transform 0.1s;
         }
-        ::-webkit-scrollbar-track {
-            background: #1e293b;
+
+        .input-field:focus {
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0 0 var(--ink-black);
         }
-        ::-webkit-scrollbar-thumb {
-            background: #475569;
-            border-radius: 4px;
+
+        .btn-primary {
+            background: var(--ink-black);
+            color: white;
+            padding: 16px 24px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
         }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #64748b;
+
+        .btn-primary:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 8px 8px 0 0 var(--safety-orange);
+        }
+
+        .btn-secondary {
+            border: 2px solid var(--ink-black);
+            background: transparent;
+            color: var(--ink-black);
+            padding: 16px 24px;
+            font-weight: 900;
+            text-transform: uppercase;
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            background: var(--ink-black);
+            color: white;
+        }
+
+        #root { height: 100vh; display: flex; flex-direction: column; }
+
+        @media print {
+            .no-print { display: none !important; }
         }
     </style>
     <script type="importmap">
 {
   "imports": {
     "react": "https://esm.sh/react@19.0.0",
-    "react/": "https://esm.sh/react@19.0.0/",
     "react-dom": "https://esm.sh/react-dom@19.0.0",
     "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "three": "https://esm.sh/three@0.170.0",
+    "three/addons/": "https://esm.sh/three@0.170.0/examples/jsm/",
     "@google/genai": "https://esm.sh/@google/genai@1.34.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "three/": "https://esm.sh/three@^0.182.0/"
   }
 }
 </script>
@@ -50,4 +107,4 @@
     <div id="root"></div>
     <script type="module" src="./index.tsx"></script>
 </body>
-</html> 
+</html>
